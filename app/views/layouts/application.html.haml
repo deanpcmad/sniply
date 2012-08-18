@@ -2,6 +2,7 @@
 	%head
 		= stylesheet_link_tag "application", :media => "all"
 		= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Fredoka+One|McLaren"
+		= javascript_include_tag "application"
 		= csrf_meta_tags
 		%title Sniply
 	%body
@@ -12,7 +13,7 @@
 					- if current_user
 						Welcome #{current_user.name}!
 						%br
-						#{link_to "New Snippet", root_path} | #{link_to "Sign Out", signout_path}
+						#{link_to "New Snippet", root_path} | #{link_to "My Snippets", mine_path} | #{link_to "Sign Out", signout_path}
 					- else
 						= link_to "Sign in with Twitter", "/auth/twitter"
 			#main{:role => "main"}

@@ -1,0 +1,14 @@
+%h2 My Snippets
+
+%table
+	%thead
+		%tr
+			%th Language
+			%th Created
+			%th 
+	%tbody
+		- if @snippets.present?
+			= render @snippets
+		- else
+			%tr
+				%td{:colspan => "4", :style => "text-align: center; font-style: italic;"} You have no snippets yet!

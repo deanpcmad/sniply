@@ -19,10 +19,14 @@ class SnippetsController < ApplicationController
   end
 
   def destroy
-    @snippet = current_user.snippets.find_by_code(params[:code])
+    @snippet = current_user.snippets.find_by_code(params[:id])
     @snippet.destroy
 
-    redirect_to snippets_url
+    redirect_to :back, notice: 'Deleted snippet'
+  end
+
+  def mine
+    @snippets = current_user.snippets.all    
   end
 
 end
