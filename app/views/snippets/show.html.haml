@@ -1,18 +1,5 @@
-%p#notice= notice
+%pre
+	= raw Pygments.highlight(@snippet.content, lexer: @snippet.language)
 
-%p
-  %b User:
-  = @snippet.user_id
-%p
-  %b Content:
-  = @snippet.content
-%p
-  %b Language:
-  = @snippet.language
-%p
-  %b Code:
-  = @snippet.code
-
-= link_to 'Edit', edit_snippet_path(@snippet)
-\|
-= link_to 'Back', snippets_path
+%p.extra
+	Snippet created by #{@snippet.user.name} at #{@snippet.created_at.strftime("%d %b %y - %H:%M")}.
