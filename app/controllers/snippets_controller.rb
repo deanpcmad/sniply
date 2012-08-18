@@ -26,7 +26,7 @@ class SnippetsController < ApplicationController
   end
 
   def mine
-    @snippets = current_user.snippets.all    
+    @snippets = current_user.snippets.all if current_user
   end
 
 end

@@ -1,14 +1,18 @@
-%h2 My Snippets
+- if current_user
+	%h2 My Snippets
 
-%table
-	%thead
-		%tr
-			%th Language
-			%th Created
-			%th 
-	%tbody
-		- if @snippets.present?
-			= render @snippets
-		- else
+	%table
+		%thead
 			%tr
-				%td{:colspan => "4", :style => "text-align: center; font-style: italic;"} You have no snippets yet!
+				%th Language
+				%th Created
+				%th 
+		%tbody
+			- if @snippets.present?
+				= render @snippets
+			- else
+				%tr
+					%td{:colspan => "4", :style => "text-align: center; font-style: italic;"} You have no snippets yet!
+
+- else
+	%h2{:style => "text-align: center"} #{link_to "Login", root_path} to see you're snippets :)
