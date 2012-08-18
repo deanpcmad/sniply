@@ -1,1 +1,11 @@
 %h2 Home!
+
+= form_for @new_snippet do |f|
+	.field
+		= f.label :content
+		= f.text_area :content
+	.field
+		= f.label :language
+		= f.text_field :language
+	.actions
+		= f.submit 'Save'
