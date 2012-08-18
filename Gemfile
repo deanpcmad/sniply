@@ -27,5 +27,5 @@ gem 'omniauth-twitter'
 gem 'pygments.rb'
 gem 'redcarpet'
 
-gem "gonzo", :path => "~/OpenSource/gonzo"
-# gem "gonzo", :git => "git://github.com/voupe/gonzo"
+# gem "gonzo", :path => "~/OpenSource/gonzo"
+gem "gonzo", :git => "git://github.com/voupe/gonzo"

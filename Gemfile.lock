@@ -1,5 +1,6 @@
-PATH
-  remote: ~/OpenSource/gonzo
+GIT
+  remote: git://github.com/voupe/gonzo
+  revision: 58b3eb40d712e2871a16c899491b1b1b2ddf5da4
   specs:
     gonzo (0.0.1)
       capistrano
