@@ -22,7 +22,7 @@ group :development do
 	gem "letter_opener"
 end
 
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'omniauth-twitter'
 
 gem "gonzo", :path => "~/OpenSource/gonzo"
 # gem "gonzo", :git => "git://github.com/voupe/gonzo"
