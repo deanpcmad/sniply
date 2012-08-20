@@ -1,5 +1,5 @@
 class Snippet < ActiveRecord::Base
-  attr_accessible :code, :content, :language, :user_id
+  attr_accessible :code, :content, :language
 
   belongs_to :user
 
