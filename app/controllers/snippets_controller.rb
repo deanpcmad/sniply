@@ -1,7 +1,7 @@
 class SnippetsController < ApplicationController
 
   def show
-    @snippet = Snippet.find_by_code(params[:code])
+    @snippet = Snippet.find_by_code!(params[:code])
   end
 
   def create
