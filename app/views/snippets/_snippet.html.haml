@@ -2,4 +2,4 @@
 	%td= snippet.title
 	%td= snippet.language.capitalize
 	%td= snippet.created_at.strftime("%d %b %y - %H:%M")
-	%td #{link_to "Show", snip_path(snippet.code)} | #{link_to "Delete", snippet_path(snippet.code), :data => { :confirm => 'Are you sure?' }, :method => :delete}
+	%td #{link_to "Show", snip_path(snippet.code)} | #{link_to "Edit", edit_snippet_path(snippet.code)} | #{link_to "Delete", snippet_path(snippet.code), :data => { :confirm => 'Are you sure?' }, :method => :delete}
