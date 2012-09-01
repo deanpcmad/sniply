@@ -4,9 +4,10 @@
 	%table
 		%thead
 			%tr
-				%th Language
-				%th Created
-				%th 
+				%th Title
+				%th{:style => "width:13%"} Language
+				%th{:style => "width:17%"} Created
+				%th{:style => "width:17%"}
 		%tbody
 			- if @snippets.present?
 				= render @snippets

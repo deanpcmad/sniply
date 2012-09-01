@@ -1,3 +1,6 @@
+%p.title= @snippet.title
+%p.desc= @snippet.desc
+
 %pre
 	= raw Pygments.highlight(@snippet.content, lexer: @snippet.language)
 
