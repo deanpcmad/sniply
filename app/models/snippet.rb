@@ -1,7 +1,9 @@
 class Snippet < ActiveRecord::Base
-  attr_accessible :code, :content, :language
+  attr_accessible :code, :content, :language, :title, :desc
 
   belongs_to :user
 
-  before_save { self.code = SecureRandom.hex(5) }
+  before_create { self.code = SecureRandom.hex(5) }
+
+  default_scope :order => 'id DESC'
 end

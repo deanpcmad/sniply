@@ -1,3 +1,6 @@
+%h2.title #{@snippet.title}  #{link_to "Edit", edit_snippet_path(@snippet.code), :class => "edit_link" if @snippet.user == current_user}
+%h3.desc= @snippet.desc
+
 %pre
 	= raw Pygments.highlight(@snippet.content, lexer: @snippet.language)
 

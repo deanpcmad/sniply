@@ -1,6 +1,7 @@
 - if current_user
 	= form_for @new_snippet do |f|
-		= f.text_area :content, :placeholder => "enter your code here..."
+		= f.text_field :title, :placeholder => "Snippet Title"
+		= f.text_area :content, :placeholder => "Enter your code here..."
 		.snippet_extra
 			= f.select :language, [['Ruby', 'ruby'], ['JavaScript', 'javascript'], ['PHP', 'php'], ['Text', 'text'], ['HTML', 'html'], ['CSS', 'css']]
 			= f.submit 'Save'

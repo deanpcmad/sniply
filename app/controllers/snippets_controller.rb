@@ -29,4 +29,20 @@ class SnippetsController < ApplicationController
     @snippets = current_user.snippets.all if current_user
   end
 
+  def edit
+    @snippet = current_user.snippets.find_by_code(params[:code]) 
+  end
+
+  def update
+    @snippet = current_user.snippets.find_by_code(params[:id])
+
+    if @snippet.update_attributes(params[:snippet])
+      redirect_to snip_path(@snippet.code), notice: 'Snippet was successfully updated.'
+    else
+      render action: "edit"
+    end
+
+    
+  end
+
 end
