@@ -1,14 +1,3 @@
-GIT
-  remote: git://github.com/voupe/gonzo
-  revision: 58b3eb40d712e2871a16c899491b1b1b2ddf5da4
-  specs:
-    gonzo (0.0.1)
-      capistrano
-      codebase4
-      http
-      unicorn
-      whenever
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -47,16 +36,6 @@ GEM
     awesome_print (1.0.2)
     blankslate (2.1.2.4)
     builder (3.0.0)
-    capistrano (2.13.0)
-      highline
-      net-scp (>= 1.0.0)
-      net-sftp (>= 2.0.0)
-      net-ssh (>= 2.0.14)
-      net-ssh-gateway (>= 1.1.0)
-    certified (0.1.0)
-    chronic (0.6.7)
-    codebase4 (1.0.16)
-      json (>= 1.1.5)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -75,18 +54,14 @@ GEM
       haml (~> 3.0)
       railties (~> 3.0)
     hashie (1.2.0)
-    highline (1.6.13)
     hike (1.2.1)
     hpricot (0.8.6)
-    http (0.2.0)
-      certified
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.1.1)
       railties (>= 3.1.0, < 5.0)
       thor (~> 0.14)
     json (1.7.5)
-    kgio (2.7.4)
     launchy (2.1.2)
       addressable (~> 2.3)
     letter_opener (0.0.2)
@@ -98,13 +73,6 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     mysql2 (0.3.11)
-    net-scp (1.0.4)
-      net-ssh (>= 1.99.1)
-    net-sftp (2.0.5)
-      net-ssh (>= 2.0.9)
-    net-ssh (2.5.2)
-    net-ssh-gateway (1.1.0)
-      net-ssh (>= 1.99.1)
     oauth (0.4.6)
     omniauth (1.1.0)
       hashie (~> 1.2)
@@ -144,7 +112,6 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    raindrops (0.10.0)
     rake (0.9.2.2)
     rdoc (3.12)
       json (~> 1.4)
@@ -173,13 +140,6 @@ GEM
     uglifier (1.2.7)
       execjs (>= 0.3.0)
       multi_json (~> 1.3)
-    unicorn (4.3.1)
-      kgio (~> 2.6)
-      rack
-      raindrops (~> 0.7)
-    whenever (0.7.3)
-      activesupport (>= 2.3.4)
-      chronic (~> 0.6.3)
 
 PLATFORMS
   ruby
@@ -187,7 +147,6 @@ PLATFORMS
 DEPENDENCIES
   app_reset
   coffee-rails (~> 3.2.1)
-  gonzo!
   haml (>= 3.1.7)
   haml-rails (>= 0.3.4)
   hpricot (>= 0.8.6)

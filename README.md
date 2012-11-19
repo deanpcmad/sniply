@@ -2,7 +2,6 @@
 
 A simple snippet sharing site. You can see the site live at [sniply.co](http://sniply.co).
 
-
 ##Getting Started
 
 Sniply has been testing on Ruby 1.9.3.
@@ -29,5 +28,3 @@ Fork this project, make any changes and create a pull request :)
 ## Licence
 
 This project is licensed under the [☺ Licence](http://licence.visualidiot.com/).
-
-
