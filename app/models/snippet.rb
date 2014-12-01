@@ -5,5 +5,5 @@ class Snippet < ActiveRecord::Base
 
   before_create { self.code = SecureRandom.hex(5) }
 
-  default_scope :order => 'id DESC'
+  #default_scope order: 'id DESC'
 end
