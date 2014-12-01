@@ -131,6 +131,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.10)
     thor (0.16.0)
     tilt (1.3.3)
     treetop (1.4.10)
@@ -161,4 +162,5 @@ DEPENDENCIES
   redcarpet
   ruby_parser (>= 2.3.1)
   sass-rails (~> 3.2.3)
+  sqlite3
   uglifier (>= 1.0.3)

@@ -9,6 +9,7 @@ group :assets do
 end
 gem 'jquery-rails'
 
+gem "sqlite3"
 gem "mysql2", ">= 0.3.11"
 gem "haml", ">= 3.1.7"
 
