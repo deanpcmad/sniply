@@ -1,13 +1,13 @@
 - if current_user
-	= form_for @new_snippet do |f|
-		= f.text_field :title, :placeholder => "Snippet Title"
-		= f.text_area :content, :placeholder => "Enter your code here..."
-		.snippet_extra
-			= f.select :language, [['Ruby', 'ruby'], ['JavaScript', 'javascript'], ['PHP', 'php'], ['Text', 'text'], ['HTML', 'html'], ['CSS', 'css']]
-			= f.submit 'Save'
+  = form_for @new_snippet do |f|
+    = f.text_field :title, :placeholder => "Snippet Title"
+    = f.text_area :content, :placeholder => "Enter your code here..."
+    .snippet_extra
+      = f.select :language, [['Ruby', 'ruby'], ['JavaScript', 'javascript'], ['PHP', 'php'], ['Text', 'text'], ['HTML', 'html'], ['CSS', 'css']]
+      = f.submit 'Save'
 
 - else
-	.welcome
-		%h1 Welcome to Sniply!
-		%h2 Sniply is a quick snippet sharing site.
-		%h2.login Login with #{link_to "Twitter", "/auth/twitter"} to get started!
+  .welcome
+    %h1 Welcome to Sniply!
+    %h2 Sniply is a quick snippet sharing site.
+    %h2.login Login with #{link_to "Twitter", "/auth/twitter"} to get started!
