@@ -4,7 +4,7 @@ A simple snippet sharing site. You can see the site live at [sniply.co](http://s
 
 ##Getting Started
 
-Sniply has been testing on Ruby 1.9.3.
+Sniply has been testing on Ruby 2.1.1.
 
 Copy the `database.yml` for your setup. For SQLite3, `cp config/database.yml.sqlite3 config.database.yml` and for MySQL `cp config/database.yml.mysql config.database.yml` and update for your username/password.
 
@@ -17,7 +17,7 @@ This isn't required in development but highly recommened for production. Run `ra
 * rake db:create
 * rake db:migrate
 
-You need to create an application on the [Twitter Developer](https://dev.twitter.com) site. When creating a new application, set the 'callback URL' as the `http://localhost:3000/auth/callback`. Copy the 'consumer key' and the 'consumer secret' keys into `config/initializers/omniauth.rb` replacing `ENV['SNIPLY_TWITTER_KEY']` and `ENV['SNIPLY_TWITTER_SECRET']`. 
+You need to create an application on the [Twitter Developer](https://dev.twitter.com) site. When creating a new application, set the 'callback URL' as the `http://localhost:3000/auth/callback`. Copy the 'consumer key' and the 'consumer secret' keys into `config/initializers/omniauth.rb` replacing `ENV['SNIPLY_TWITTER_KEY']` and `ENV['SNIPLY_TWITTER_SECRET']`.
 
 When in production, the 'callback URL' needs to be changed to your site URL with `/auth/callback` on the end. Also you should set the environment variables set for `SNIPLY_TWITTER_KEY` and `SNIPLY_TWITTER_SECRET`. You can paste these into your source code but it is a security risk. You should keep these details secret.
 
