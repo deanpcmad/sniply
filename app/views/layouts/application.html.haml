@@ -27,14 +27,13 @@
 
     - if Rails.env.production?
       :javascript
-        var _gauges = _gauges || [];
+        var _paq = _paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
         (function() {
-          var t   = document.createElement('script');
-          t.type  = 'text/javascript';
-          t.async = true;
-          t.id    = 'gauges-tracker';
-          t.setAttribute('data-site-id', '502ff4a8613f5d14cc000001');
-          t.src = '//secure.gaug.es/track.js';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(t, s);
+          var u="//stats.voupe.com/";
+          _paq.push(['setTrackerUrl', u+'piwik.php']);
+          _paq.push(['setSiteId', 9]);
+          var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+          g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
         })();
