@@ -1,14 +1,16 @@
 Sniply::Application.routes.draw do
-	root :to => "home#index"
+	
+  root "home#index"
 
-	post "/auth/:provider/callback" => "sessions#create"
-	delete "/signout" => "sessions#destroy", :as => :signout
+	get "/auth/:provider/callback", to: "sessions#create"
+	delete "/signout", to: "sessions#destroy", as: :signout
 
-	get "/mine" => "snippets#mine", :as => :mine
+	get "/mine", to: "snippets#mine", as: :mine
 
-	resources :snippets, :only => [:create, :destroy, :update]
+	resources :snippets, only: [:create, :destroy, :update]
 
-	get ":code/edit" => "snippets#edit", :as => :edit_snippet
+	get ":code/edit", to: "snippets#edit", as: :edit_snippet
 
-	post ":code" => "snippets#show", :as => :snip
+	get ":code", to: "snippets#show", as: :snip
+
 end

@@ -6,9 +6,9 @@ class SnippetsController < ApplicationController
 
   def create
     if current_user
-      @snippet = current_user.snippets.build(params[:snippet])
+      @snippet = current_user.snippets.build(snippet_params)
     else
-      @snippet = Snippet.new(params[:snippet])
+      @snippet = Snippet.new(snippet_params)
     end
 
     if @snippet.save
@@ -26,7 +26,7 @@ class SnippetsController < ApplicationController
   end
 
   def mine
-    @snippets = current_user.snippets.all if current_user
+    @snippets = current_user.snippets.order(id: :desc) if current_user
   end
 
   def edit
@@ -36,13 +36,17 @@ class SnippetsController < ApplicationController
   def update
     @snippet = current_user.snippets.find_by_code(params[:id])
 
-    if @snippet.update_attributes(params[:snippet])
+    if @snippet.update_attributes(snippet_params)
       redirect_to snip_path(@snippet.code), notice: 'Snippet was successfully updated.'
     else
       render action: "edit"
     end
+  end
 
-    
+  private
+
+  def snippet_params
+    params.require(:snippet).permit(:title, :content, :language)
   end
 
 end

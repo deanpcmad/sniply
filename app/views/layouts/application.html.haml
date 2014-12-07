@@ -1,43 +1,40 @@
 <!doctype html>
 %html
-	%head
-		= stylesheet_link_tag "application", :media => "all"
-		= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Fredoka+One|McLaren"
-		= javascript_include_tag "application"
-		= csrf_meta_tags
-		%title Sniply
-	%body
-		#container.container
-			%header
-				%h1.logo #{link_to "Sniply", root_path}
-				.user
-					- if current_user
-						Welcome #{current_user.name}!
-						%br
-						#{link_to "New Snippet", root_path} | #{link_to "My Snippets", mine_path} | #{link_to "Sign Out", signout_path}
-					- else
-						= link_to "Sign in with Twitter", "/auth/twitter"
-			#main{:role => "main"}
-				= render 'layouts/messages'
-				= yield
-		.footer
-			.tweet
-				<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sniply.co" data-text="Sniply - Simple Snippet Sharing" data-via="DeanPerry" data-size="large">Tweet</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			%p A site by <a href="http://dean.io">Dean Perry</a>. Oh and it's #{link_to "Open Source", "https://github.com/deanperry/sniply"} :)
+  %head
+    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "http://fonts.googleapis.com/css?family=Fredoka+One|McLaren"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %title Sniply
+  %body
+    #container.container
+      %header
+        %h1.logo #{link_to "Sniply", root_path}
+        .user
+          - if current_user
+            Welcome #{current_user.name}!
+            %br
+            #{link_to "New Snippet", root_path} | #{link_to "My Snippets", mine_path} | #{link_to "Sign Out", signout_path}
+          - else
+            = link_to "Sign in with Twitter", "/auth/twitter"
+      #main
+        = render 'layouts/messages'
+        = yield
+      .footer
+        %p A site by <a href="http://deanpcmad.com">Dean Perry</a>. Oh and it's #{link_to "Open Source", "https://github.com/deanperry/sniply"} :)
 
 
 
-		- if Rails.env.production?
-			:javascript
-				var _gauges = _gauges || [];
-				(function() {
-					var t   = document.createElement('script');
-					t.type  = 'text/javascript';
-					t.async = true;
-					t.id    = 'gauges-tracker';
-					t.setAttribute('data-site-id', '502ff4a8613f5d14cc000001');
-					t.src = '//secure.gaug.es/track.js';
-					var s = document.getElementsByTagName('script')[0];
-					s.parentNode.insertBefore(t, s);
-				})();
+    - if Rails.env.production?
+      :javascript
+        var _gauges = _gauges || [];
+        (function() {
+          var t   = document.createElement('script');
+          t.type  = 'text/javascript';
+          t.async = true;
+          t.id    = 'gauges-tracker';
+          t.setAttribute('data-site-id', '502ff4a8613f5d14cc000001');
+          t.src = '//secure.gaug.es/track.js';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(t, s);
+        })();
